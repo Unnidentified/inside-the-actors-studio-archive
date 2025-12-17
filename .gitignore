@@ -1,0 +1,32 @@
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Icon?
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+venv/
+.env
+
+# Large media files and video staging
+*.mp4
+*.mkv
+*.avi
+*.mpg
+*.mpeg
+*.webm
+*.wav
+*.iso
+*.vob
+*.bup
+*.ifo
+Add Later/
+FOUND/
