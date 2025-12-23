@@ -1,62 +1,117 @@
-# Inside the Actors Studio (1994–2018). Archival index.
-> ***This repo, the posts and the Google Drive archive are updated regularly (well... from time to time), revised for inconsistencies in naming, and when I find or I'm reached out by people with new episodes, I try to add them as quickly as possible.***
-<br>
+# Inside the Actors Studio (1994–2018): archival index
 
+A preservation index for *Inside the Actors Studio*, covering the 277 episodes
+of the Bravo/Ovation run plus the specials and DVD extras that circulate
+alongside them.
 
-## Important links.
+The media lives in a public Google Drive folder. This repository holds the
+index, the tooling that keeps the index honest, and the checklist that the
+archive is published against.
 
-* **Google Drive Archive**: [**Google Drive Public Folder**](https://drive.google.com/drive/folders/1_3WhsWhf_AUX4JRDNHlkkrN_6O0XfL1f?usp=drive_link)
-* **Community posts & discussions**:
-  * [r/ForgottenTV Post](https://www.reddit.com/r/ForgottenTV/comments/1wem0ga/inside_the_actors_studio_1994_an_almost_complete/)
-  * [r/DHExchange Post](https://www.reddit.com/r/DHExchange/comments/1wem2qq/inside_the_actors_studio_1994_an_almost_complete/)
-  * [r/acting Post](https://www.reddit.com/r/acting/comments/1wenhsn/inside_the_actors_studio_1994_an_almost_complete/)
-  * ~r/lostmedia~ *(original post deleted)*
+**Archive:** [Google Drive public folder](https://drive.google.com/drive/folders/1_3WhsWhf_AUX4JRDNHlkkrN_6O0XfL1f?usp=drive_link)
 
-<br>
+**Discussions:** [r/ForgottenTV](https://www.reddit.com/r/ForgottenTV/comments/1wem0ga/inside_the_actors_studio_1994_an_almost_complete/) ·
+[r/DHExchange](https://www.reddit.com/r/DHExchange/comments/1wem2qq/inside_the_actors_studio_1994_an_almost_complete/) ·
+[r/acting](https://www.reddit.com/r/acting/comments/1wenhsn/inside_the_actors_studio_1994_an_almost_complete/)
 
-## How many episodes have I found?
+---
 
-* **Canonical Wikipedia Series Episodes**: **277 episodes** (Seasons 1–23)
-* **Preserved Series Episodes**: **225 / 277** (**81.2% Complete**)
-* **Preserved Season 0 Specials & Extras**: **13 items**
-* **Total Drive Entries**: **238 items** (319 video files including alternate cuts/qualities, ~165+ GB)
-* **Remaining Missing Episodes**: **52 episodes**
+## Status
 
-NOTE: Episode numbering, dates, seasons, and positioning are prioritized based on this: <br> 
-[*Wikipedia List of Inside the Actors Studio episodes*](https://en.wikipedia.org/wiki/List_of_Inside_the_Actors_Studio_episodes).
+| | |
+| --- | --- |
+| Canonical series episodes | **277** (seasons 1–23) |
+| Preserved | **225** (81.2%) |
+| Missing | **52** |
+| Specials and extras | **13** |
+| Video files in the archive | **287** across 238 distinct episodes |
+| Total size | **165.4 GB** |
 
-<br>
+Episode numbering, air dates and season placement follow the
+[Wikipedia episode list](https://en.wikipedia.org/wiki/List_of_Inside_the_Actors_Studio_episodes),
+which is the only source this archive is checked against. Other episode guides
+disagree with each other and with Wikipedia; where they do, Wikipedia wins.
 
-## Latest findings:
+The numbers above are not maintained by hand. They come from
+`itas audit`, which compares the Wikipedia listing, a snapshot of the Drive
+folder, and the checklist below, and fails if the three disagree.
 
-Please refer to [CHANGELOG.md](CHANGELOG.md) to see episode additions in a continuous file.
+---
 
-* [Archive Update - 09/28/2026](CHANGELOG.md#archive-update---09282026): Philip Seymour Hoffman (recovered lost episode) and Edward Norton broadcast master
-* [Archive Update - 09/12/2026](CHANGELOG.md#archive-update---09122026): Restored mirror threads across Reddit
-* [Archive Update - 09/06/2026](CHANGELOG.md#archive-update---09062026): Anthony Quinn and Queen Latifah
-* [Archive Update - 08/27/2026](CHANGELOG.md#archive-update---08272026): Sydney Pollack, Jack Lemmon, Jennifer Jason Leigh, and 10 additional episodes
-* [Archive Update - 05/23/2026](CHANGELOG.md#archive-update---05232026): Bernadette Peters, Dave Chappelle, Bryan Cranston, and alternate cuts
-* [Archive Update - 03/01/2026](CHANGELOG.md#archive-update---03012026): Sally Field, Dennis Hopper, Neil Simon, Christopher Walken, Martin Landau, Anjelica Huston
-* [Archive Update - 01/07/2026](CHANGELOG.md#archive-update---01072026): Lee Grant, Tommy Lee Jones, Edward Norton, Brad Pitt
-* [Archive Update - 12/23/2025](CHANGELOG.md#archive-update---12232025): Julia Roberts (lost media) and Kristen Wiig
-* [Archive Launch - 12/17/2025](CHANGELOG.md#archive-launch---12172025): Initial Google Drive release (195 series episodes and 13 specials)
+## How the repository is organised
 
+```text
+.
+├── itas/                  # the audit tooling (see TOOLS.md)
+├── data/
+│   ├── episodes.json         # canonical episode list, parsed from the wikitext
+│   ├── wikipedia_itas.wikitext
+│   ├── drive_snapshot.json   # every file and folder in the Drive archive
+│   ├── drive_snapshot.csv
+│   └── drive_snapshot_files.txt
+├── tests/                 # pytest suite, including checks against real data
+├── docs/known-issues.md   # understood problems that are not yet fixed
+├── available-global.txt   # the master post, with the generated checklist
+├── CHANGELOG.md           # archive additions, newest first
+├── CONTRIBUTING.md
+└── TOOLS.md               # CLI reference and conventions
+```
 
-<br>
+Both data files are committed so the repository can be audited without
+network access or credentials.
 
+---
 
-## Availability checklist (as of 09.28.2026)
+## Using the tooling
 
-*Plain text = Available in Google Drive | ~~Strikethrough~~ = Missing / Lost Media*
+```bash
+pip install -e ".[dev]"
+
+itas audit            # cross-check Wikipedia, Drive and the checklist
+itas verify-names     # check filenames against the convention
+itas render           # print the checklist; --write updates the master post
+itas index --folder <drive-url>   # refresh the snapshot (needs GDRIVE_API_KEY)
+itas parse-wiki       # rebuild data/episodes.json from the wikitext
+```
+
+`itas audit` exits non-zero when something is inconsistent, so it is safe to
+run in CI. The full command reference, the filename convention and the data
+model are in [TOOLS.md](TOOLS.md).
+
+---
+
+## Recent additions
+
+The full history is in [CHANGELOG.md](CHANGELOG.md).
+
+* **09/28/2026** — Philip Seymour Hoffman (recovered lost episode), Edward Norton broadcast master
+* **09/12/2026** — mirror threads restored across Reddit
+* **09/06/2026** — Anthony Quinn, Queen Latifah
+* **08/27/2026** — Sydney Pollack, Jack Lemmon, Jennifer Jason Leigh, and 10 more
+* **05/23/2026** — Bernadette Peters, Dave Chappelle, Bryan Cranston, alternate cuts
+* **03/01/2026** — Sally Field, Dennis Hopper, Neil Simon, Christopher Walken, Martin Landau, Anjelica Huston
+* **01/07/2026** — Lee Grant, Tommy Lee Jones, Edward Norton, Brad Pitt
+* **12/23/2025** — Julia Roberts (lost media), Kristen Wiig
+* **12/17/2025** — initial release: 195 series episodes and 13 specials
+
+---
+
+## Availability checklist
 
 **Specials / Season 0**
 
 * S00E02 - 100th Episode Special
 * S00E03 - 50 Year Celebration
-* S00E04-07 - Robert De Niro (Deleted Scenes)
+* S00E04 - Robert De Niro (Deleted Scenes) #1
+* S00E05 - Robert De Niro (Deleted Scenes) #2
+* S00E06 - Robert De Niro (Deleted Scenes) #3
+* S00E07 - Robert De Niro (Deleted Scenes) #4
 * S00E08 - 200th Episode (Hosted by Dave Chappelle)
-* S00E09-E15 - Robin Williams (Extras Combined)
-* S00E33-36 - Paul Newman (Deleted Scenes)
+* S00E09 - Robin Williams (Extras Combined)
+* S00E33 - Paul Newman (Deleted Scenes) #1
+* S00E34 - Paul Newman (Deleted Scenes) #2
+* S00E35 - Paul Newman (Deleted Scenes) #3
+* S00E36 - Paul Newman (Deleted Scenes) #4
 * S00E53 - DVD Introduction
 
 **Season 1**
@@ -272,7 +327,7 @@ Please refer to [CHANGELOG.md](CHANGELOG.md) to see episode additions in a conti
 
 * S12E01 - Cast of The Producers
 * ~~S12E02 - Barbara Walters~~
-* S12E03 - Queen Latifah (Russian Dub)
+* S12E03 - Queen Latifah
 * S12E04 - Ralph Fiennes
 * S12E05 - Martin Lawrence
 * S12E06 - Liza Minnelli
@@ -405,37 +460,13 @@ Please refer to [CHANGELOG.md](CHANGELOG.md) to see episode additions in a conti
 * S23E07 - James Burrows
 * S23E08 - Lupita Nyong'o
 
-<br>
----
+## Contributing
 
-## Tools and scripts used for agents to verify and scrape for errors and such:
+Missing an episode, or have a better copy? See [CONTRIBUTING.md](CONTRIBUTING.md).
+Known problems that are documented rather than fixed are listed in
+[docs/known-issues.md](docs/known-issues.md).
 
-### 1. Repo structure.
+## Licence
 
-```text
-itas-episodes/
-├── README.md                     # Master documentation & episode availability checklist
-├── CHANGELOG.md                  # Comprehensive archive changelog and release history
-├── TOOLS.md                      # Complete CLI toolset guide and technical documentation
-├── .gitignore                    # Media exclusions (*.mp4, *.mkv, *.iso, staging directories)
-│
-├── drive_indexer.py              # Recursive Google Drive API v3 crawler & metadata exporter
-├── wiki_episodes.json            # Structured dataset of all 277 canonical series episodes
-├── wikipedia_itas.wikitext       # Raw canonical MediaWiki source wikitext
-├── parse_wiki.py                 # MediaWiki table parser for canonical metadata extraction
-│
-├── itas_episodes.json            # Live Google Drive archive metadata database (319 items)
-├── itas_episodes.csv             # Spreadsheet export of drive contents
-├── itas_episodes_files.txt       # Flat relative path list of drive archive
-│
-├── verify_all_episodes.py        # 3-way auditor (Wikipedia vs. Drive vs. Post Markdown)
-├── contrast_drive_wiki_post.py   # Live audit & discrepancy engine
-├── available-global.txt          # Master tracking post with changelog and mirror links
-├── global-copy.txt               # Synchronized backup copy of master tracking post
-│
-└── encode_episodes.py            # FFmpeg deinterlacer & MP4 standardizer (+faststart)
-```
-
-### 2. Tools usage.
-
-Complete tool documentation, options, and script syntax are documented in [tools.md](TOOLS.md).
+The tooling is MIT licensed. The episodes are not distributed here and remain
+the property of their respective rights holders.
