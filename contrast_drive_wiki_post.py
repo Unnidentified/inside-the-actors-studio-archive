@@ -8,7 +8,7 @@ with open("wiki_episodes.json") as f:
 with open("itas_episodes.json") as f:
     drive_items = json.load(f)
 
-with open("reddit_post_global-new.txt") as f:
+with open("available-global.txt") as f:
     post_text = f.read()
 
 drive_files = [x for x in drive_items if not x["is_directory"]]

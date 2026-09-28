@@ -493,13 +493,8 @@ itas-episodes/
 │
 ├── verify_all_episodes.py        # 3-way auditor (Wikipedia vs. Drive vs. Post Markdown)
 ├── contrast_drive_wiki_post.py   # Live audit & discrepancy engine
-├── verify_announcements.py       # Validates changelog dates against Wikipedia air dates
-│
-├── reddit_post_global-new.txt    # Master Reddit Markdown post with mirrors & update log
-├── reddit_post_dhexchange.txt    # r/DHExchange community variant
-├── reddit_post_lostmedia.txt     # r/lostmedia community variant
-├── reddit_post_forgottentv.txt   # r/ForgottenTV community variant
-├── generate_community_posts.py   # Regenerates all community variants from master post
+├── available-global.txt          # Master tracking post with changelog and mirror links
+├── global-copy.txt               # Synchronized backup copy of master tracking post
 │
 └── encode_episodes.py            # FFmpeg deinterlacer & MP4 standardizer (+faststart)
 ```
@@ -534,13 +529,6 @@ Encodes and standardizes newly found raw broadcast rips into universal H.264/AAC
 
 ```bash
 python3 encode_episodes.py
-```
-
-#### 5. Community Post Generator (`generate_community_posts.py`)
-Synchronizes the master markdown tracking post (`reddit_post_global-new.txt`) to the respective subreddit variants (`r/DHExchange`, `r/lostmedia`, `r/ForgottenTV`):
-
-```bash
-python3 generate_community_posts.py
 ```
 
 ---
