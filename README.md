@@ -480,7 +480,6 @@ Restored posts across reddit. First a YouTube channel got taken down, now my thr
 ```text
 itas-episodes/
 ├── README.md                     # Master documentation & episode availability checklist
-├── CATCHUP.md                    # Developer and archive state reference
 ├── .gitignore                    # Media exclusions (*.mp4, *.mkv, *.iso, staging directories)
 │
 ├── drive_indexer.py              # Recursive Google Drive API v3 crawler & metadata exporter
