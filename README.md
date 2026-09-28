@@ -1,5 +1,5 @@
 # Inside the Actors Studio (1994–2018). Archival index.
-> ***This post and the Google Drive archive are periodically updated, revised for inconsistencies in naming, and new episodes are added from time to time as they are progressively found.***
+> ***This post and the Google Drive archive are updated regulary (well... from time to time), revised for inconsistencies in naming, and when I find or I'm reached out by people with new episodes, I try to add them as quickly as possible.***
 <br>
 
 
@@ -10,7 +10,7 @@
   * [r/ForgottenTV Post](https://www.reddit.com/r/ForgottenTV/comments/1wem0ga/inside_the_actors_studio_1994_an_almost_complete/)
   * [r/DHExchange Post](https://www.reddit.com/r/DHExchange/comments/1wem2qq/inside_the_actors_studio_1994_an_almost_complete/)
   * [r/acting Post](https://www.reddit.com/r/acting/comments/1wenhsn/inside_the_actors_studio_1994_an_almost_complete/)
-  * r/lostmedia *(original post deleted)*
+  * ~r/lostmedia~ *(original post deleted)*
 
 <br>
 
