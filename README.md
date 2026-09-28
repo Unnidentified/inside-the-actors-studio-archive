@@ -1,12 +1,12 @@
-# Inside the Actors Studio (1994–2018). Archival Index.
+# Inside the Actors Studio (1994–2018). Archival index.
 > ***This post and the Google Drive archive are periodically updated, revised for inconsistencies in naming, and new episodes are added from time to time as they are progressively found.***
 <br>
 
 
-## Archive Links & Mirrors
+## Important links.
 
 * **Google Drive Archive**: [**Google Drive Public Folder**](https://drive.google.com/drive/folders/1_3WhsWhf_AUX4JRDNHlkkrN_6O0XfL1f?usp=drive_link)
-* **Community Mirrors & Discussions**:
+* **Community posts & discussions**:
   * [r/ForgottenTV Post](https://www.reddit.com/r/ForgottenTV/comments/1wem0ga/inside_the_actors_studio_1994_an_almost_complete/)
   * [r/DHExchange Post](https://www.reddit.com/r/DHExchange/comments/1wem2qq/inside_the_actors_studio_1994_an_almost_complete/)
   * [r/acting Post](https://www.reddit.com/r/acting/comments/1wenhsn/inside_the_actors_studio_1994_an_almost_complete/)
@@ -14,7 +14,7 @@
 
 <br>
 
-## Preservation Status
+## How many episodes have I found?
 
 * **Canonical Wikipedia Series Episodes**: **277 episodes** (Seasons 1–23)
 * **Preserved Series Episodes**: **225 / 277** (**81.2% Complete**)
@@ -22,13 +22,14 @@
 * **Total Drive Entries**: **238 items** (319 video files including alternate cuts/qualities, ~165+ GB)
 * **Remaining Missing Episodes**: **52 episodes**
 
-NOTE: Episode numbering, dates, seasons, and positioning are prioritized based on this*** [*Wikipedia List of Inside the Actors Studio episodes*](https://en.wikipedia.org/wiki/List_of_Inside_the_Actors_Studio_episodes).
+NOTE: Episode numbering, dates, seasons, and positioning are prioritized based on this: <br> 
+[*Wikipedia List of Inside the Actors Studio episodes*](https://en.wikipedia.org/wiki/List_of_Inside_the_Actors_Studio_episodes).
 
----
+<br>
 
-## Recent Updates & Changelog
+## New findings!
 
-Full release notes and episode additions are tracked in [CHANGELOG.md](CHANGELOG.md).
+Please refer to [CHANGELOG.md](CHANGELOG.md) to see episode additions in a continuous file.
 
 * [Archive Update - 09/28/2026](CHANGELOG.md#archive-update---09282026): Philip Seymour Hoffman (recovered lost episode) and Edward Norton broadcast master
 * [Archive Update - 09/12/2026](CHANGELOG.md#archive-update---09122026): Restored mirror threads across Reddit
@@ -40,9 +41,11 @@ Full release notes and episode additions are tracked in [CHANGELOG.md](CHANGELOG
 * [Archive Update - 12/23/2025](CHANGELOG.md#archive-update---12232025): Julia Roberts (lost media) and Kristen Wiig
 * [Archive Launch - 12/17/2025](CHANGELOG.md#archive-launch---12172025): Initial Google Drive release (195 series episodes and 13 specials)
 
----
 
-## Episode Availability Checklist (as of 09.28.2026)
+<br>
+
+
+## Availability checklist (as of 09.28.2026)
 
 *Plain text = Available in Google Drive | ~~Strikethrough~~ = Missing / Lost Media*
 
@@ -402,11 +405,12 @@ Full release notes and episode additions are tracked in [CHANGELOG.md](CHANGELOG
 * S23E07 - James Burrows
 * S23E08 - Lupita Nyong'o
 
+<br>
 ---
 
-## Archive Toolset & Developer Reference
+## Tools and scripts used for agents to verify and scrape for errors and such:
 
-### Repository Structure
+### 1. Repo structure.
 
 ```text
 itas-episodes/
@@ -432,6 +436,6 @@ itas-episodes/
 └── encode_episodes.py            # FFmpeg deinterlacer & MP4 standardizer (+faststart)
 ```
 
-### Tools & CLI Usage
+### 2. Tools usage.
 
 Complete tool documentation, options, and script syntax are documented in [tools.md](TOOLS.md).
