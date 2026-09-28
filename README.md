@@ -1,19 +1,18 @@
-# Inside the Actors Studio (1994–2018) - Preservation Archive & Toolset
+# Inside the Actors Studio (1994–2018). Full Archival Index.
+> ***This post and the Google Drive archive are periodically updated, revised for inconsistencies in naming, and new episodes are added from time to time as they are progressively found.***
+<br>
 
-> Automated verification suite, metadata database, and tracking repository for the digital preservation archive of James Lipton's **Inside the Actors Studio**.
-
----
 
 ## Archive Links & Mirrors
 
-* **Google Drive Master Archive**: [**Google Drive Public Folder**](https://drive.google.com/drive/folders/1_3WhsWhf_AUX4JRDNHlkkrN_6O0XfL1f?usp=drive_link)
+* **Google Drive Archive**: [**Google Drive Public Folder**](https://drive.google.com/drive/folders/1_3WhsWhf_AUX4JRDNHlkkrN_6O0XfL1f?usp=drive_link)
 * **Community Mirrors & Discussions**:
   * [r/ForgottenTV Post](https://www.reddit.com/r/ForgottenTV/comments/1wem0ga/inside_the_actors_studio_1994_an_almost_complete/)
   * [r/DHExchange Post](https://www.reddit.com/r/DHExchange/comments/1wem2qq/inside_the_actors_studio_1994_an_almost_complete/)
   * [r/acting Post](https://www.reddit.com/r/acting/comments/1wenhsn/inside_the_actors_studio_1994_an_almost_complete/)
   * r/lostmedia *(original post deleted)*
 
----
+<br>
 
 ## Preservation Status
 
@@ -23,7 +22,7 @@
 * **Total Drive Entries**: **238 items** (319 video files including alternate cuts/qualities, ~165+ GB)
 * **Remaining Missing Episodes**: **52 episodes**
 
-> ***NOTE: Episode numbering, dates, seasons, and positioning are prioritized based on this*** [*Wikipedia List of Inside the Actors Studio episodes*](https://en.wikipedia.org/wiki/List_of_Inside_the_Actors_Studio_episodes)*.* ***This post and the Google Drive archive are periodically updated, revised for inconsistencies in naming, and new episodes are added from time to time as they are progressively found.***
+NOTE: Episode numbering, dates, seasons, and positioning are prioritized based on this*** [*Wikipedia List of Inside the Actors Studio episodes*](https://en.wikipedia.org/wiki/List_of_Inside_the_Actors_Studio_episodes).
 
 ---
 
@@ -435,11 +434,4 @@ itas-episodes/
 
 ### Tools & CLI Usage
 
-Complete tool documentation, options, and script syntax are documented in [TOOLS.md](TOOLS.md).
-
-* [Google Drive Recursive Indexer (`drive_indexer.py`)](TOOLS.md#1-google-drive-recursive-indexer-drive_indexerpy): Recursive Drive crawler and metadata exporter (JSON, CSV, TXT).
-* [Full 3-Way Archive Auditor (`verify_all_episodes.py`)](TOOLS.md#2-full-3-way-archive-auditor-verify_all_episodespy): Cross-references Drive database against canonical Wikipedia episode lists and post markdown.
-* [Live Drive Contrast Engine (`contrast_drive_wiki_post.py`)](TOOLS.md#3-live-drive-contrast-engine-contrast_drive_wiki_postpy): Audits staged video files against live Drive storage and flags discrepancies.
-* [FFmpeg Video Standardization (`encode_episodes.py`)](TOOLS.md#4-ffmpeg-video-standardization-encode_episodespy): Deinterlaces raw rips (`bwdif`), encodes H.264/AAC MP4, and optimizes streaming with `+faststart`.
-* [MediaWiki Table Parser (`parse_wiki.py`)](TOOLS.md#5-mediawiki-table-parser-parse_wikipy): Extracts canonical episode metadata directly from raw MediaWiki source text.
-* [File Naming Standard](TOOLS.md#file-naming-standard): Canonical episode naming convention for all archive files.
+Complete tool documentation, options, and script syntax are documented in [tools.md](TOOLS.md).
