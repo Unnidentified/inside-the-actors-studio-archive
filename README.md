@@ -1,4 +1,4 @@
-# Inside the Actors Studio (1994–2018). Full Archival Index.
+# Inside the Actors Studio (1994–2018). Archival Index.
 > ***This post and the Google Drive archive are periodically updated, revised for inconsistencies in naming, and new episodes are added from time to time as they are progressively found.***
 <br>
 
