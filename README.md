@@ -27,7 +27,7 @@ NOTE: Episode numbering, dates, seasons, and positioning are prioritized based o
 
 <br>
 
-## New findings!
+## Latest findings:
 
 Please refer to [CHANGELOG.md](CHANGELOG.md) to see episode additions in a continuous file.
 
