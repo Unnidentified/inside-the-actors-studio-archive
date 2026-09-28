@@ -1,4 +1,4 @@
-# Inside the Actors Studio (1994–2018) — Preservation Archive & Toolset
+# Inside the Actors Studio (1994–2018) - Preservation Archive & Toolset
 
 > Automated verification suite, metadata database, and tracking repository for the digital preservation archive of James Lipton's **Inside the Actors Studio**.
 
@@ -29,85 +29,17 @@
 
 ## Recent Updates & Changelog
 
->**09/28/2026.**  
-• [S06E10] Added Philip Seymour Hoffman's episode 10 from season 06. (recovered lost episode)  
-• [S09E08] Added a higher quality DVD broadcast master of Edward Norton's episode 08 from season 09.  
+Full release notes and episode additions are tracked in [CHANGELOG.md](CHANGELOG.md).
 
- ‎ ‎ ‎ ‎-------------------
-
->**09/12/2026.**  
-Restored posts across reddit. First a YouTube channel got taken down, now my three posts across reddit got deleted. And yet, BravoTV doesn't give any paid/legal means to watch these episodes? Why?
-
- ‎ ‎ ‎ ‎-------------------
-
->**09/06/2026.**  
-• \[S03E11\] Added Anthony Quinn's episode 11 from season 03.  
-• \[S12E03\] Added Queen Latifah's episode 03 (Russian Dub) from season 12.  
-**Credits to** u/Z3ppelinDude93 for finding and sharing these.
-
- ‎ ‎ ‎ ‎-------------------
-
->**08/27/2026.**  
-**•** \[S01E12\] Added Sydney Pollack's episode 12 from season 01.  
-**•** \[S04E10\] Added Jack Lemmon's episode 10 from season 04.  
-**•** \[S05E11\] Added Jennifer Jason Leigh's episode 11 from season 05.  
-**•** \[S06E13\] Added Sigourney Weaver's episode 13 from season 06.  
-**•** \[S07E18\] Added Burt Reynolds's episode 18 from season 07.  
-**•** \[S08E07\] Added a second cut of Stockard Channing's episode 07 from season 08.  
-**•** \[S08E17\] Added Vanessa Redgrave's episode 17 from season 08.  
-**•** \[S12E01\] Added Cast of The Producers' episode 01 from season 12.  
-**•** \[S14E01\] Added Sarah Jessica Parker's episode 01 from season 14.  
-**•** \[S15E08\] Added Anthony LaPaglia's episode 08 from season 15.  
-**•** \[S21E01\] Added Sarah Silverman's episode 01 from season 21.  
-**•** \[S21E04\] Added Jeff Daniels's episode 04 from season 21.  
-**•** \[S22E01\] Added Jessica Chastain's episode 01 from season 22.  
-**Credits to** u/rutgerrules and u/GrigioGuy for reaching out to me with these.
-
- ‎ ‎ ‎ ‎-------------------
-
->**05/23/2026.**  
-**•** \[S07E01\] Added Bernadette Peters's episode 01 from season 07.  
-**•** \[S07E15\] Added higher quality cuts of Robin Williams's episode 15 from season 07.  
-**•** \[S11E22\] Added extra cuts of Elton John's episode 22 from season 11.  
-**•** \[S15E02\] Added Dave Chappelle's episode 02 (James Lipton celebration) from season 15.  
-**•** \[S15E04\] Added Josh Brolin's episode 04 from season 15.  
-**•** \[S21E02\] Added Bryan Cranston's episode 02 from season 21.  
-**•** \[S22E07\] Added Ted Danson's episode 07 from season 22.
-
- ‎ ‎ ‎ ‎-------------------
-
->**03/01/2026.**  
-**•** \[S01E06\] Added Sally Field's episode 06 from season 01.  
-**•** \[S01E07\] Added a higher quality cut of Dennis Hopper's episode 07 from season 01.  
-**•** \[S01E11\] Added Neil Simon's episode 11 from season 01.  
-**•** \[S02E09\] Added a higher quality cut of Christopher Walken's episode 09 from season 02.  
-**•** \[S02E12\] Added Martin Landau's episode 12 from season 02.  
-**•** \[S03E04\] Added Anjelica Huston's episode 04 from season 03.  
-**•** \[S07E07\] Added a higher quality cut of Ed Harris's episode 07 from season 07.  
-**•** \[S18E02\] Added a longer and a higher quality cut of Brad Pitt's episode 02 from season 18.  
-**Credits to** [https://actors-studio.org/web/inside-the-actors-studio/](https://actors-studio.org/web/inside-the-actors-studio/) for these episodes.
-
- ‎ ‎ ‎ ‎-------------------
-
->**01/07/2026.**  
-**•** \[S02E01\] Added Lee Grant's episode 01 from season 02.  
-**•** \[S03E07\] Added Tommy Lee Jones's episode 07 from season 03.  
-**•** \[S09E08\] Added Edward Norton's episode 08 from season 09.  
-**•** \[S18E02\] Added Brad Pitt's episode 02 from season 18.  
-**Credits to** u/austintolin for these episodes.
-
- ‎ ‎ ‎ ‎-------------------
-
->**12/23/2025.**  
-**•** \[S03E09\] Added Julia Roberts’s episode 09 from season 03. (lost media)  
-**•** \[S22E06\] Added Kristen Wiig’s episode 06 from season 22.
-
- ‎ ‎ ‎ ‎-------------------
-
->**12/17/2025.**  
-[https://drive.google.com/drive/folders/1\_3WhsWhf\_AUX4JRDNHlkkrN\_6O0XfL1f?usp=drive\_link](https://drive.google.com/drive/folders/1_3WhsWhf_AUX4JRDNHlkkrN_6O0XfL1f?usp=drive_link) \- From the time of this edit to 1h and 20m it will be completely uploaded. I've already posted it to r/lostmedia (post now deleted), r/ForgottenTV ([post](https://www.reddit.com/r/ForgottenTV/comments/1wem0ga/inside_the_actors_studio_1994_an_almost_complete/)) and r/DHExchange. ([post](https://www.reddit.com/r/DHExchange/comments/1wem2qq/inside_the_actors_studio_1994_an_almost_complete/)), and to r/acting ([post](https://www.reddit.com/r/acting/comments/1wenhsn/inside_the_actors_studio_1994_an_almost_complete/))
-
- ‎
+* [Archive Update - 09/28/2026](CHANGELOG.md#archive-update---09282026): Philip Seymour Hoffman (recovered lost episode) and Edward Norton broadcast master
+* [Archive Update - 09/12/2026](CHANGELOG.md#archive-update---09122026): Restored mirror threads across Reddit
+* [Archive Update - 09/06/2026](CHANGELOG.md#archive-update---09062026): Anthony Quinn and Queen Latifah
+* [Archive Update - 08/27/2026](CHANGELOG.md#archive-update---08272026): Sydney Pollack, Jack Lemmon, Jennifer Jason Leigh, and 10 additional episodes
+* [Archive Update - 05/23/2026](CHANGELOG.md#archive-update---05232026): Bernadette Peters, Dave Chappelle, Bryan Cranston, and alternate cuts
+* [Archive Update - 03/01/2026](CHANGELOG.md#archive-update---03012026): Sally Field, Dennis Hopper, Neil Simon, Christopher Walken, Martin Landau, Anjelica Huston
+* [Archive Update - 01/07/2026](CHANGELOG.md#archive-update---01072026): Lee Grant, Tommy Lee Jones, Edward Norton, Brad Pitt
+* [Archive Update - 12/23/2025](CHANGELOG.md#archive-update---12232025): Julia Roberts (lost media) and Kristen Wiig
+* [Archive Launch - 12/17/2025](CHANGELOG.md#archive-launch---12172025): Initial Google Drive release (195 series episodes and 13 specials)
 
 ---
 
@@ -480,6 +412,8 @@ Restored posts across reddit. First a YouTube channel got taken down, now my thr
 ```text
 itas-episodes/
 ├── README.md                     # Master documentation & episode availability checklist
+├── CHANGELOG.md                  # Comprehensive archive changelog and release history
+├── TOOLS.md                      # Complete CLI toolset guide and technical documentation
 ├── .gitignore                    # Media exclusions (*.mp4, *.mkv, *.iso, staging directories)
 │
 ├── drive_indexer.py              # Recursive Google Drive API v3 crawler & metadata exporter
@@ -501,46 +435,11 @@ itas-episodes/
 
 ### Tools & CLI Usage
 
-#### 1. Google Drive Recursive Indexer (`drive_indexer.py`)
-Scans the public Google Drive directory and generates structured index files with MD5 checksums, file sizes, and download links:
+Complete tool documentation, options, and script syntax are documented in [TOOLS.md](TOOLS.md).
 
-```bash
-python3 drive_indexer.py "YOUR_FOLDER_ID" --api-key "YOUR_API_KEY" -f json -o itas_episodes.json
-python3 drive_indexer.py "YOUR_FOLDER_ID" --api-key "YOUR_API_KEY" -f csv -o itas_episodes.csv
-python3 drive_indexer.py "YOUR_FOLDER_ID" --api-key "YOUR_API_KEY" -f txt --files-only -o itas_episodes_files.txt
-```
-
-#### 2. Full 3-Way Archive Auditor (`verify_all_episodes.py`)
-Cross-references every file in the Google Drive database against the canonical [Wikipedia: List of Inside the Actors Studio episodes](https://en.wikipedia.org/wiki/List_of_Inside_the_Actors_Studio_episodes) and validates that the crossed/uncrossed statuses in the tracking markdown are 100% accurate:
-
-```bash
-python3 verify_all_episodes.py
-```
-
-#### 3. Live Drive Contrast Engine (`contrast_drive_wiki_post.py`)
-Audits live Drive files against staged files in `Add Later/` and reports newly uploaded files and discrepancy reports:
-
-```bash
-python3 contrast_drive_wiki_post.py
-```
-
-#### 4. FFmpeg Video Standardization (`encode_episodes.py`)
-Encodes and standardizes newly found raw broadcast rips into universal H.264/AAC MP4 with 4:3 deinterlacing (`bwdif`) and `+faststart` web optimization:
-
-```bash
-python3 encode_episodes.py
-```
-
----
-
-### File Naming Standard
-
-Every episode file in the archive follows this strict canonical format:
-```text
-Season {SS}/S{SS}E{EE}.{GuestNamePascalCase}-{YYYY.MM.DD}.ITAS.{SD|HD}[cut].mp4
-```
-
-* **Season & Episode**: Two-digit zero-padded (`S01E06`, `S12E03`).
-* **Guest Name**: PascalCase without spaces (`PhilipSeymourHoffman`, `JackLemmon`).
-* **Air Date**: Canonical Wikipedia air date formatted as `YYYY.MM.DD`.
-* **Quality**: `SD` (standard definition, <720p) or `HD` (>=720p). Alternate cuts use `SD1`, `SD2`, `SD3`.
+* [Google Drive Recursive Indexer (`drive_indexer.py`)](TOOLS.md#1-google-drive-recursive-indexer-drive_indexerpy): Recursive Drive crawler and metadata exporter (JSON, CSV, TXT).
+* [Full 3-Way Archive Auditor (`verify_all_episodes.py`)](TOOLS.md#2-full-3-way-archive-auditor-verify_all_episodespy): Cross-references Drive database against canonical Wikipedia episode lists and post markdown.
+* [Live Drive Contrast Engine (`contrast_drive_wiki_post.py`)](TOOLS.md#3-live-drive-contrast-engine-contrast_drive_wiki_postpy): Audits staged video files against live Drive storage and flags discrepancies.
+* [FFmpeg Video Standardization (`encode_episodes.py`)](TOOLS.md#4-ffmpeg-video-standardization-encode_episodespy): Deinterlaces raw rips (`bwdif`), encodes H.264/AAC MP4, and optimizes streaming with `+faststart`.
+* [MediaWiki Table Parser (`parse_wiki.py`)](TOOLS.md#5-mediawiki-table-parser-parse_wikipy): Extracts canonical episode metadata directly from raw MediaWiki source text.
+* [File Naming Standard](TOOLS.md#file-naming-standard): Canonical episode naming convention for all archive files.
