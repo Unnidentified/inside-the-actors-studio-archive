@@ -1,5 +1,5 @@
 # Inside the Actors Studio (1994–2018). Archival index.
-> ***This post and the Google Drive archive are updated regulary (well... from time to time), revised for inconsistencies in naming, and when I find or I'm reached out by people with new episodes, I try to add them as quickly as possible.***
+> ***This repo, the posts and the Google Drive archive are updated regularly (well... from time to time), revised for inconsistencies in naming, and when I find or I'm reached out by people with new episodes, I try to add them as quickly as possible.***
 <br>
 
 
