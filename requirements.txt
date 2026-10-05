@@ -1,0 +1,4 @@
+# Runtime dependencies are empty: the tooling uses only the standard library.
+# Development dependencies:
+pytest>=7.4
+ruff>=0.4

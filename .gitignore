@@ -1,32 +1,41 @@
-# OS files
+# OS noise
 .DS_Store
-.DS_Store?
 ._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
-Icon?
+desktop.ini
 
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
-.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
 venv/
-.env
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
-# Large media files and video staging
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Media staging: the archive lives on Drive, never in git
 *.mp4
 *.mkv
 *.avi
+*.mov
+*.m4v
+*.webm
 *.mpg
 *.mpeg
-*.webm
-*.wav
+*.wmv
 *.iso
 *.vob
 *.bup
 *.ifo
 Add Later/
 FOUND/
+To-add/
