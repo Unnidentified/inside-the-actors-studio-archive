@@ -1,112 +1,203 @@
-# Inside the Actors Studio (1994–2018) - Tools & Developer Reference
+# Tools and conventions
 
-Documentation, command line parameters, and workflows for the archive verification suite and encoding toolset.
+Reference for the `itas` command line, the data files it reads, and the rules
+the archive follows.
 
 ---
 
-## <a id="1-google-drive-recursive-indexer-drive_indexerpy"></a><a id="google-drive-recursive-indexer"></a>1. Google Drive Recursive Indexer (`drive_indexer.py`)
+## Installation
 
-Scans the public Google Drive directory and generates structured index files with MD5 checksums, file sizes, and download links.
-
-### Usage
+The tooling uses only the Python standard library at runtime.
 
 ```bash
-# JSON metadata export
-python3 drive_indexer.py "YOUR_FOLDER_ID" --api-key "YOUR_API_KEY" -f json -o itas_episodes.json
-
-# Spreadsheet CSV export
-python3 drive_indexer.py "YOUR_FOLDER_ID" --api-key "YOUR_API_KEY" -f csv -o itas_episodes.csv
-
-# Plain text file list
-python3 drive_indexer.py "YOUR_FOLDER_ID" --api-key "YOUR_API_KEY" -f txt --files-only -o itas_episodes_files.txt
+python -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev]"       # adds pytest and ruff
 ```
 
-### Options
-
-* `folder_id`: Google Drive folder ID to crawl recursively.
-* `--api-key`: Google Cloud API Key with Google Drive API v3 enabled.
-* `-f, --format`: Output format (`json`, `csv`, `txt`).
-* `-o, --output`: Target output file path.
-* `--files-only`: Omit directory paths from the text listing.
-
----
-
-## <a id="2-full-3-way-archive-auditor-verify_all_episodespy"></a><a id="full-3-way-archive-auditor"></a>2. Full 3-Way Archive Auditor (`verify_all_episodes.py`)
-
-Cross-references every file in the Google Drive database against the canonical [Wikipedia Episode Guide](https://en.wikipedia.org/wiki/List_of_Inside_the_Actors_Studio_episodes) and validates that the crossed/uncrossed statuses in the tracking markdown are 100% accurate.
-
-### Usage
+Or run it without installing:
 
 ```bash
-python3 verify_all_episodes.py
-```
-
-### Output Validation
-
-* Verifies 277 canonical Wikipedia series episodes across Seasons 1–23.
-* Contrasts live Drive files against `available-global.txt`.
-* Reports remaining missing episodes and confirms formatting integrity.
-
----
-
-## <a id="3-live-drive-contrast-engine-contrast_drive_wiki_postpy"></a><a id="live-drive-contrast-engine"></a>3. Live Drive Contrast Engine (`contrast_drive_wiki_post.py`)
-
-Audits live Drive files against staged files in `Add Later/` and reports newly uploaded files and discrepancy reports.
-
-### Usage
-
-```bash
-python3 contrast_drive_wiki_post.py
-```
-
-### Key Tasks
-
-* Detects unstaged or unindexed video files.
-* Compares file sizes and MD5 checksums between local files and remote storage.
-* Prints discrepancy reports for uncatalogued episodes.
-
----
-
-## <a id="4-ffmpeg-video-standardization-encode_episodespy"></a><a id="ffmpeg-video-standardization"></a>4. FFmpeg Video Standardization (`encode_episodes.py`)
-
-Encodes and standardizes newly found raw broadcast rips into universal H.264/AAC MP4 with 4:3 deinterlacing (`bwdif`) and `+faststart` web optimization.
-
-### Usage
-
-```bash
-python3 encode_episodes.py
-```
-
-### Encoding Specifications
-
-* **Video Codec**: `libx264`, CRF 18, `preset=slow`, `pix_fmt=yuv420p`.
-* **Audio Codec**: AAC stereo, 192 kbps, 48 kHz.
-* **Deinterlacing Filter**: `bwdif=mode=1:parity=-1:deint=1` (motion-adaptive field rate doubling).
-* **Container**: MP4 with `-movflags +faststart` for progressive streaming.
-
----
-
-## <a id="5-mediawiki-table-parser-parse_wikipy"></a><a id="mediawiki-table-parser"></a>5. MediaWiki Table Parser (`parse_wiki.py`)
-
-Extracts canonical episode metadata directly from raw MediaWiki source text (`wikipedia_itas.wikitext`) and produces structured JSON datasets (`wiki_episodes.json`).
-
-### Usage
-
-```bash
-python3 parse_wiki.py
+python -m itas.cli audit
 ```
 
 ---
 
-## <a id="file-naming-standard"></a>File Naming Standard
+## Commands
 
-Every episode file in the archive follows this strict canonical format:
+### `itas audit`
+
+Cross-checks the three sources of truth and prints a report.
+
+```bash
+itas audit                    # human-readable report, non-zero exit on errors
+itas audit --quiet            # summary only
+itas audit --strict           # non-zero exit on warnings too
+itas audit --tracking other.txt
+```
+
+Checks performed:
+
+| Code | Severity | Meaning |
+| --- | --- | --- |
+| `guest-mismatch` | error | filename guest disagrees with Wikipedia |
+| `air-date-mismatch` | error | year in the filename disagrees with Wikipedia |
+| `tracking-stale` | error | checklist says missing, archive has it |
+| `tracking-optimistic` | error | checklist says available, archive lacks it |
+| `tracking-missing-line` | error | Wikipedia episode absent from the checklist |
+| `tracking-duplicate` | error | episode listed twice |
+| `tracking-unknown` | error | checklist lists an episode Wikipedia does not |
+| `tracking-guest` | warning | checklist guest name drifts from Wikipedia |
+| `unknown-episode` | warning | archive file for an episode Wikipedia does not list |
+| `naming` | warning | video filename breaks the convention |
+| `stale-exception` | info | a legacy exception no longer matches a real file |
+| `alternate-cuts` | info | episode ships more than one file |
+
+Findings listed in `itas.audit.KNOWN_ISSUES` are downgraded to `info` so CI
+stays green while the underlying question is open. See
+[known-issues.md](known-issues.md).
+
+### `itas verify-names`
+
+Applies the filename convention to every video file in the snapshot.
+
+```bash
+itas verify-names
+itas verify-names --strict    # non-zero exit on any problem
+```
+
+### `itas render`
+
+Prints the availability checklist, or writes it back into the master post.
+
+```bash
+itas render
+itas render --write           # rewrites the section under "# Updated Episode List"
+```
+
+The checklist is generated from `data/drive_snapshot.json` and
+`data/episodes.json`. Editing it by hand will be overwritten.
+
+### `itas index`
+
+Walks the public Drive folder and rewrites the snapshot.
+
+```bash
+export GDRIVE_API_KEY=...
+itas index --folder "https://drive.google.com/drive/folders/<id>"
+itas index --folder <id> --out /tmp/snapshot
+```
+
+Writes `drive_snapshot.json`, `drive_snapshot.csv` and
+`drive_snapshot_files.txt` into `data/` (or `--out`). The API key needs the
+Drive API v3 enabled; the folder must be shared publicly.
+
+### `itas parse-wiki`
+
+Rebuilds `data/episodes.json` from `data/wikipedia_itas.wikitext`.
+
+```bash
+itas parse-wiki
+```
+
+Season 23 tables carry an extra "Host" column, which the parser accounts for.
+
+---
+
+## Data files
+
+### `data/episodes.json`
+
+The canonical episode list, one record per series episode:
+
+```json
+{
+  "season": 6,
+  "episode": 10,
+  "air_date": "June 4, 2000",
+  "guest": "Philip Seymour Hoffman"
+}
+```
+
+Generated by `itas parse-wiki`. Do not edit by hand.
+
+### `data/drive_snapshot.json`
+
+Every file and folder in the Drive archive, in walk order:
+
+```json
+{
+  "id": "1LIr6sqlc4gzsFmGkC0lNQvWa4OmOZJnW",
+  "name": "S06E10.PhilipSeymourHoffman-2000.06.04.ITAS.SD.mp4",
+  "path": "Season 06/S06E10.PhilipSeymourHoffman-2000.06.04.ITAS.SD.mp4",
+  "is_directory": false,
+  "mime_type": "video/mp4",
+  "size_bytes": 737148928,
+  "modified_time": "2026-09-28T10:12:44.433Z"
+}
+```
+
+Generated by `itas index`. Do not edit by hand.
+
+---
+
+## Filename convention
 
 ```text
 Season {SS}/S{SS}E{EE}.{GuestNamePascalCase}-{YYYY.MM.DD}.ITAS.{SD|HD}[cut].mp4
 ```
 
-* **Season & Episode**: Two-digit zero-padded (`S01E06`, `S12E03`).
-* **Guest Name**: PascalCase without spaces (`PhilipSeymourHoffman`, `JackLemmon`).
-* **Air Date**: Canonical Wikipedia air date formatted as `YYYY.MM.DD`.
-* **Quality**: `SD` (standard definition, <720p) or `HD` (>=720p). Alternate cuts use `SD1`, `SD2`, `SD3`.
+| Part | Rule | Example |
+| --- | --- | --- |
+| Season folder | zero-padded, two digits | `Season 06` |
+| Episode code | `S` + season + `E` + episode | `S06E10` |
+| Guest | PascalCase, no spaces or punctuation | `PhilipSeymourHoffman` |
+| Air date | Wikipedia air date, dotted | `2000.06.04` |
+| Quality | `SD` under 720p, `HD` at or above | `SD` |
+| Cut | numeric suffix for alternate versions | `SD2` |
+
+Accepted containers are `mp4`, `mkv` and `avi`; new additions should be `mp4`.
+
+Files that predate the convention are listed by name in
+`itas/naming.py::LEGACY_EXCEPTIONS` with a reason. `itas verify-names` reports
+any file that is neither canonical nor exempt, and any exemption that no
+longer matches a real file.
+
+---
+
+## Encoding new additions
+
+New captures are normalised before upload:
+
+```bash
+ffmpeg -i input.mkv \
+  -vf "bwdif=mode=send_frame:parity=auto:deint=all,scale=768:576" \
+  -c:v libx264 -crf 19 -preset fast -pix_fmt yuv420p \
+  -c:a aac -b:a 192k -ar 48000 \
+  -movflags +faststart \
+  "S06E10.PhilipSeymourHoffman-2000.06.04.ITAS.SD.mp4"
+```
+
+* `bwdif` deinterlaces the 480i broadcast masters to 50/60 fps
+* `scale=768:576` gives a 4:3 frame at 576p, the archive's standard SD size
+* `crf 19` with `preset fast` keeps the encode close to lossless without
+  spending hours per episode
+* `+faststart` moves the moov atom to the front so the file streams in a
+  browser instead of downloading first
+
+Keep the original if it is the only copy of that cut.
+
+---
+
+## Development
+
+```bash
+make test     # pytest
+make lint     # ruff
+make audit    # full cross-check
+```
+
+The audit checks are pure functions: they take data in and return `Finding`
+objects. File and network access lives in the CLI, which is what keeps the
+test suite fast enough to run on every push.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add a check.
