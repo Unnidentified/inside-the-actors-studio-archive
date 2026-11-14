@@ -15,18 +15,20 @@ Open an issue with:
 * where the copy came from (broadcast, DVD, streaming rip, private collection)
 * runtime and, if you know it, resolution
 
-If you have the file, do not attach it to the issue. Upload it to the
-`To-add/` folder in the Drive archive and say so in the issue.
+If you have the file, attach it directly to the issue. A maintainer saves it
+immediately, deletes the attachment from GitHub, and closes the issue once the
+file is verified and in the archive. Nothing is left hosted on GitHub.
 
 ## Adding an episode to the archive
 
-1. Upload the file to `To-add/` in the Drive folder.
+1. Save the file from the issue attachment.
 2. Name it following the convention below.
 3. Run `itas index` to refresh the snapshot, then `itas audit` to confirm the
    file is picked up and matches Wikipedia.
 4. Run `itas render --write` to regenerate the checklist in
    `available-global.txt`.
 5. Add an entry to `CHANGELOG.md` under today's date.
+6. Delete the attachment from the issue and close it.
 
 ## Filename convention
 
