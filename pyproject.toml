@@ -32,7 +32,7 @@ itas = "itas.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/Unnidentified/inside-the-actors-studio-archive"
-Changelog = "https://github.com/Unnidentified/inside-the-actors-studio-archive/blob/main/CHANGELOG.md"
+Changelog = "https://github.com/Unnidentified/inside-the-actors-studio-archive/blob/main/docs/CHANGELOG.md"
 
 [tool.setuptools.packages.find]
 include = ["itas*"]

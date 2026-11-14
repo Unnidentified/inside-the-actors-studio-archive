@@ -40,7 +40,7 @@ release tag named after the day the Drive folder was updated.
 ### Known issues
 
 * S15E02 is a James Lipton special filed under the Dave Chappelle slot. See
-  [docs/known-issues.md](docs/known-issues.md).
+  [known-issues.md](known-issues.md).
 
 ## [2026-09-28]
 

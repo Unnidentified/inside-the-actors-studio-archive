@@ -80,7 +80,7 @@ itas render --write --also README.md         # regenerate both checklists
 
 ## Known issues
 
-`docs/known-issues.md` lists problems that are understood but not fixed,
+`known-issues.md` in this folder lists problems that are understood but not fixed,
 including `S15E02` (a James Lipton special filed under the Dave Chappelle slot)
 and the 33 files that predate the filename convention. Read it before
 "fixing" either.

@@ -42,7 +42,8 @@ folder, and the checklist below, and fails if the three disagree.
 
 ```text
 .
-├── itas/                  # the audit tooling (see TOOLS.md)
+├── README.md              # this file
+├── itas/                  # the audit tooling
 ├── data/
 │   ├── episodes.json         # canonical episode list, parsed from the wikitext
 │   ├── wikipedia_itas.wikitext
@@ -50,11 +51,13 @@ folder, and the checklist below, and fails if the three disagree.
 │   ├── drive_snapshot.csv
 │   └── drive_snapshot_files.txt
 ├── tests/                 # pytest suite, including checks against real data
-├── docs/known-issues.md   # understood problems that are not yet fixed
-├── available-global.txt   # the master post, with the generated checklist
-├── CHANGELOG.md           # archive additions, newest first
-├── CONTRIBUTING.md
-└── TOOLS.md               # CLI reference and conventions
+├── docs/
+│   ├── TOOLS.md              # CLI reference and conventions
+│   ├── CONTRIBUTING.md       # how to report an episode, how to work on the code
+│   ├── CHANGELOG.md          # archive additions, newest first
+│   ├── AGENTS.md             # working notes for coding agents
+│   └── known-issues.md       # understood problems that are not yet fixed
+└── available-global.txt   # the master post, with the generated checklist
 ```
 
 Both data files are committed so the repository can be audited without
@@ -76,13 +79,13 @@ itas parse-wiki       # rebuild data/episodes.json from the wikitext
 
 `itas audit` exits non-zero when something is inconsistent, so it is safe to
 run in CI. The full command reference, the filename convention and the data
-model are in [TOOLS.md](TOOLS.md).
+model are in [docs/TOOLS.md](docs/TOOLS.md).
 
 ---
 
 ## Recent additions
 
-The full history is in [CHANGELOG.md](CHANGELOG.md).
+The full history is in [docs/CHANGELOG.md](docs/CHANGELOG.md).
 
 * **09/28/2026** — Philip Seymour Hoffman (recovered lost episode), Edward Norton broadcast master
 * **09/12/2026** — mirror threads restored across Reddit
@@ -462,7 +465,7 @@ The full history is in [CHANGELOG.md](CHANGELOG.md).
 
 ## Contributing
 
-Missing an episode, or have a better copy? See [CONTRIBUTING.md](CONTRIBUTING.md).
+Missing an episode, or have a better copy? See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
 Known problems that are documented rather than fixed are listed in
 [docs/known-issues.md](docs/known-issues.md).
 
