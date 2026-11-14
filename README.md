@@ -84,15 +84,15 @@ model are in [TOOLS.md](TOOLS.md).
 
 The full history is in [CHANGELOG.md](CHANGELOG.md).
 
-* **09/28/2026** — Philip Seymour Hoffman (recovered lost episode), Edward Norton broadcast master
-* **09/12/2026** — mirror threads restored across Reddit
-* **09/06/2026** — Anthony Quinn, Queen Latifah
-* **08/27/2026** — Sydney Pollack, Jack Lemmon, Jennifer Jason Leigh, and 10 more
-* **05/23/2026** — Bernadette Peters, Dave Chappelle, Bryan Cranston, alternate cuts
-* **03/01/2026** — Sally Field, Dennis Hopper, Neil Simon, Christopher Walken, Martin Landau, Anjelica Huston
-* **01/07/2026** — Lee Grant, Tommy Lee Jones, Edward Norton, Brad Pitt
-* **12/23/2025** — Julia Roberts (lost media), Kristen Wiig
-* **12/17/2025** — initial release: 195 series episodes and 13 specials
+* **09/28/2026**: Philip Seymour Hoffman (recovered lost episode), Edward Norton broadcast master
+* **09/12/2026**: mirror threads restored across Reddit
+* **09/06/2026**: Anthony Quinn, Queen Latifah
+* **08/27/2026**: Sydney Pollack, Jack Lemmon, Jennifer Jason Leigh, and 10 more
+* **05/23/2026**: Bernadette Peters, Dave Chappelle, Bryan Cranston, alternate cuts
+* **03/01/2026**: Sally Field, Dennis Hopper, Neil Simon, Christopher Walken, Martin Landau, Anjelica Huston
+* **01/07/2026**: Lee Grant, Tommy Lee Jones, Edward Norton, Brad Pitt
+* **12/23/2025**: Julia Roberts (lost media), Kristen Wiig
+* **12/17/2025**: initial release: 195 series episodes and 13 specials
 
 ---
 

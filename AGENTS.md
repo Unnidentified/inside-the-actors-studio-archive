@@ -3,6 +3,14 @@
 Repo-specific conventions. Read this before opening a PR or touching the
 audit tooling.
 
+## Writing style
+
+**Do not use em dashes anywhere.** Not in chat replies, PR descriptions,
+commit messages, documentation, code comments or generated output. Use a
+comma, a colon, a semicolon, parentheses, or split the sentence in two.
+En dashes in numeric ranges (`1994-2018`, `seasons 1-23`) are fine. The ban
+is on the em dash character only.
+
 ## Pull requests
 
 **Do not add the Replicas workspace footer to pull request descriptions in
@@ -11,8 +19,8 @@ this repository.** No `replicas.dev/pr-footer-workspace.svg` block, no
 contributor would.
 
 Keep the co-author trailers (`Co-Authored-By: Bannatar`,
-`Co-Authored-By: replicas-connector[bot]`) on commits and PR descriptions —
-only the footer block is unwanted.
+`Co-Authored-By: replicas-connector[bot]`) on commits and PR descriptions.
+Only the footer block is unwanted.
 
 ## Contributing flow
 
