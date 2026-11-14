@@ -5,11 +5,30 @@ audit tooling.
 
 ## Writing style
 
-**Do not use em dashes anywhere.** Not in chat replies, PR descriptions,
-commit messages, documentation, code comments or generated output. Use a
-comma, a colon, a semicolon, parentheses, or split the sentence in two.
-En dashes in numeric ranges (`1994-2018`, `seasons 1-23`) are fine. The ban
-is on the em dash character only.
+Write like a person, not like a model.
+
+**No em dashes anywhere.** Not in chat replies, PR descriptions, commit
+messages, documentation, code comments or generated output. Use a comma, a
+colon, a semicolon, parentheses, or split the sentence in two. En dashes in
+numeric ranges (`1994-2018`, `seasons 1-23`) are fine. The ban is on the em
+dash character only.
+
+**No rhetorical tics.** Specifically avoid:
+
+- `It's not X, it's Y` and every variant of the pattern: `This isn't about X,
+  it's about Y`, `The problem isn't X. It's Y.`, `Not X. Not Y. But Z.`
+- `honest`, `honestly`, `to be honest`, `let me be candid`, `I'll be blunt`
+- `delve`, `leverage`, `robust`, `seamless`, `elevate`, `unlock`, `foster`,
+  `landscape`, `testament to`, `at the end of the day`
+- `Let's break it down`, `Here's the thing`, `The bottom line is`, `It's worth
+  noting that`, `It's important to note that`
+- Rule-of-three lists used for rhythm rather than content
+- Opening with a summary paragraph that repeats the heading
+- Closing with a restatement of what was just said
+- Bolded lead-ins on every bullet
+- Emoji in prose
+
+State the thing. Give the reason. Stop.
 
 ## Attribution
 
