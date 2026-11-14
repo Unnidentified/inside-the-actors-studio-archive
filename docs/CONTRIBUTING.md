@@ -1,9 +1,6 @@
 # Contributing
 
-Thanks for helping keep this archive alive. There are two ways to contribute:
-reporting something, and fixing something.
-
----
+Two ways to help: report something, or fix something.
 
 ## Reporting a missing or better copy
 
@@ -12,12 +9,12 @@ Open an issue with:
 * the season and episode number (`S06E10`)
 * the guest name as it appears on the
   [Wikipedia episode list](https://en.wikipedia.org/wiki/List_of_Inside_the_Actors_Studio_episodes)
-* where the copy came from (broadcast, DVD, streaming rip, private collection)
-* runtime and, if you know it, resolution
+* where the copy came from: broadcast, DVD, streaming rip, private collection
+* runtime, and resolution if you know it
 
-If you have the file, attach it directly to the issue. A maintainer saves it
+If you have the file, attach it to the issue. A maintainer saves it
 immediately, deletes the attachment from GitHub, and closes the issue once the
-file is verified and in the archive. Nothing is left hosted on GitHub.
+file is verified and in the archive. Nothing stays hosted on GitHub.
 
 ## Adding an episode to the archive
 
@@ -32,7 +29,7 @@ file is verified and in the archive. Nothing is left hosted on GitHub.
 
 ## Filename convention
 
-```
+```text
 S{SS}E{EE}.{GuestNamePascalCase}-{YYYY.MM.DD}.ITAS.{SD|HD}[cut].mp4
 ```
 
@@ -43,8 +40,8 @@ S{SS}E{EE}.{GuestNamePascalCase}-{YYYY.MM.DD}.ITAS.{SD|HD}[cut].mp4
 * alternate cuts get a numeric suffix: `SD1`, `SD2`, `HD1`
 
 `itas verify-names` checks all of this. Files that predate the convention are
-listed by name in `itas/naming.py` with a reason; do not add new exceptions
-without a good one.
+listed by name in `itas/naming.py` with a reason. Do not add new exceptions
+without one.
 
 ## Working on the tooling
 
@@ -58,29 +55,26 @@ make lint     # ruff
 make audit    # full cross-check
 ```
 
-The package is `itas/`:
-
 | Module | Responsibility |
 | --- | --- |
-| `model.py` | `Episode`, `ArchiveEntry`, `EpisodeCode` and file loading |
+| `model.py` | `Episode`, `ArchiveEntry`, `EpisodeCode`, file loading |
 | `wiki.py` | MediaWiki table parser |
-| `drive.py` | Drive API v3 client and recursive folder walk |
-| `naming.py` | Filename convention and the legacy exception list |
+| `drive.py` | Drive API v3 client, recursive folder walk |
+| `naming.py` | Filename convention, legacy exception list |
 | `audit.py` | Cross-checks and the `Finding` model |
 | `render.py` | Generates the availability checklist |
-| `export.py` | JSON/CSV/TXT exports |
+| `export.py` | JSON, CSV and TXT exports |
 | `cli.py` | The `itas` command |
 
-Keep the audit checks pure: they take data in and return `Finding` objects,
-with no printing or file access. The CLI does the I/O. That is what makes the
+Keep the audit checks pure. They take data in and return `Finding` objects,
+with no printing or file access. The CLI does the I/O. That split keeps the
 test suite fast enough to run on every push.
 
 ### Adding a check
 
 1. Write `check_something(episodes, entries) -> list[Finding]` in `audit.py`.
 2. Call it from `run_audit`.
-3. Add tests to `tests/test_audit.py` covering both the clean and the dirty
-   case.
+3. Add tests to `tests/test_audit.py` for the clean case and the dirty case.
 
 ### Refreshing the data
 
@@ -92,19 +86,18 @@ itas index --folder <drive-url>      # data/drive_snapshot.{json,csv,txt}
 ```
 
 `itas index` needs `GDRIVE_API_KEY` set to a key with the Drive API enabled.
-Both commands rewrite files in place; commit the result together with the
+Both commands rewrite files in place. Commit the result together with the
 changelog entry that explains it.
 
 ## Commit messages
 
-Use the imperative mood and say why, not just what:
+Imperative mood, and say why rather than only what:
 
 ```
 Add S06E10 Philip Seymour Hoffman from the Biography Channel master
 
-The UK broadcast runs 41m21s versus the 38m syndicated cut, so this is
+The UK broadcast runs 41m21s against the 38m syndicated cut, so this is
 the longest version known. Only Mary Tyler Moore remains missing in S6.
 ```
 
-Avoid `Update README.md`-style messages; they make the history unreadable a
-year later.
+`Update README.md`-style messages make the history unreadable a year later.

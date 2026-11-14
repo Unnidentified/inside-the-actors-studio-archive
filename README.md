@@ -1,44 +1,40 @@
-# Inside the Actors Studio (1994–2018): archival index
+# Inside the Actors Studio (1994-2018): archival index
 
-A preservation index for *Inside the Actors Studio*, covering the 277 episodes
-of the Bravo/Ovation run plus the specials and DVD extras that circulate
-alongside them.
+A preservation index for *Inside the Actors Studio*: the 277 episodes of the
+Bravo and Ovation run, plus the specials and DVD extras that circulate with
+them.
 
-The media lives in a public Google Drive folder. This repository holds the
-index, the tooling that keeps the index honest, and the checklist that the
-archive is published against.
+The video lives in a public Google Drive folder. This repository holds the
+index of what is in it, the tooling that checks the index, and the checklist
+the archive is published against.
 
-**Archive:** [Google Drive public folder](https://drive.google.com/drive/folders/1_3WhsWhf_AUX4JRDNHlkkrN_6O0XfL1f?usp=drive_link)
+Archive: [Google Drive public folder](https://drive.google.com/drive/folders/1_3WhsWhf_AUX4JRDNHlkkrN_6O0XfL1f?usp=drive_link)
 
-**Discussions:** [r/ForgottenTV](https://www.reddit.com/r/ForgottenTV/comments/1wem0ga/inside_the_actors_studio_1994_an_almost_complete/) ·
-[r/DHExchange](https://www.reddit.com/r/DHExchange/comments/1wem2qq/inside_the_actors_studio_1994_an_almost_complete/) ·
+Discussions: [r/ForgottenTV](https://www.reddit.com/r/ForgottenTV/comments/1wem0ga/inside_the_actors_studio_1994_an_almost_complete/),
+[r/DHExchange](https://www.reddit.com/r/DHExchange/comments/1wem2qq/inside_the_actors_studio_1994_an_almost_complete/),
 [r/acting](https://www.reddit.com/r/acting/comments/1wenhsn/inside_the_actors_studio_1994_an_almost_complete/)
-
----
 
 ## Status
 
 | | |
 | --- | --- |
-| Canonical series episodes | **277** (seasons 1–23) |
-| Preserved | **225** (81.2%) |
-| Missing | **52** |
-| Specials and extras | **13** |
-| Video files in the archive | **287** across 238 distinct episodes |
-| Total size | **165.4 GB** |
+| Canonical series episodes | 277 (seasons 1-23) |
+| Preserved | 225 (81.2%) |
+| Missing | 52 |
+| Specials and extras | 13 |
+| Video files | 287 across 238 distinct episodes |
+| Total size | 165.4 GB |
 
 Episode numbering, air dates and season placement follow the
-[Wikipedia episode list](https://en.wikipedia.org/wiki/List_of_Inside_the_Actors_Studio_episodes),
-which is the only source this archive is checked against. Other episode guides
-disagree with each other and with Wikipedia; where they do, Wikipedia wins.
+[Wikipedia episode list](https://en.wikipedia.org/wiki/List_of_Inside_the_Actors_Studio_episodes).
+Other episode guides disagree with each other; where they disagree with
+Wikipedia, Wikipedia wins.
 
-The numbers above are not maintained by hand. They come from
-`itas audit`, which compares the Wikipedia listing, a snapshot of the Drive
-folder, and the checklist below, and fails if the three disagree.
+`itas audit` produces these numbers. It compares the Wikipedia listing, a
+snapshot of the Drive folder and the checklist below, and fails if the three
+disagree.
 
----
-
-## How the repository is organised
+## Repository layout
 
 ```text
 .
@@ -53,51 +49,45 @@ folder, and the checklist below, and fails if the three disagree.
 ├── tests/                 # pytest suite, including checks against real data
 ├── docs/
 │   ├── TOOLS.md              # CLI reference and conventions
-│   ├── CONTRIBUTING.md       # how to report an episode, how to work on the code
+│   ├── CONTRIBUTING.md       # reporting an episode, working on the code
 │   ├── CHANGELOG.md          # archive additions, newest first
 │   ├── AGENTS.md             # working notes for coding agents
 │   └── known-issues.md       # understood problems that are not yet fixed
 └── available-global.txt   # the master post, with the generated checklist
 ```
 
-Both data files are committed so the repository can be audited without
+Both data files are committed, so the repository can be audited without
 network access or credentials.
-
----
 
 ## Using the tooling
 
 ```bash
 pip install -e ".[dev]"
 
-itas audit            # cross-check Wikipedia, Drive and the checklist
-itas verify-names     # check filenames against the convention
-itas render           # print the checklist; --write updates the master post
+itas audit                        # cross-check Wikipedia, Drive and the checklist
+itas verify-names                 # check filenames against the convention
+itas render                       # print the checklist; --write updates the post
 itas index --folder <drive-url>   # refresh the snapshot (needs GDRIVE_API_KEY)
-itas parse-wiki       # rebuild data/episodes.json from the wikitext
+itas parse-wiki                   # rebuild data/episodes.json from the wikitext
 ```
 
-`itas audit` exits non-zero when something is inconsistent, so it is safe to
-run in CI. The full command reference, the filename convention and the data
-model are in [docs/TOOLS.md](docs/TOOLS.md).
-
----
+`itas audit` exits non-zero when something is inconsistent, so it can run in
+CI unchanged. Command reference, filename convention and data model are in
+[docs/TOOLS.md](docs/TOOLS.md).
 
 ## Recent additions
 
-The full history is in [docs/CHANGELOG.md](docs/CHANGELOG.md).
+Full history in [docs/CHANGELOG.md](docs/CHANGELOG.md).
 
-* **09/28/2026** — Philip Seymour Hoffman (recovered lost episode), Edward Norton broadcast master
-* **09/12/2026** — mirror threads restored across Reddit
-* **09/06/2026** — Anthony Quinn, Queen Latifah
-* **08/27/2026** — Sydney Pollack, Jack Lemmon, Jennifer Jason Leigh, and 10 more
-* **05/23/2026** — Bernadette Peters, Dave Chappelle, Bryan Cranston, alternate cuts
-* **03/01/2026** — Sally Field, Dennis Hopper, Neil Simon, Christopher Walken, Martin Landau, Anjelica Huston
-* **01/07/2026** — Lee Grant, Tommy Lee Jones, Edward Norton, Brad Pitt
-* **12/23/2025** — Julia Roberts (lost media), Kristen Wiig
-* **12/17/2025** — initial release: 195 series episodes and 13 specials
-
----
+* 09/28/2026: Philip Seymour Hoffman (recovered lost episode), Edward Norton broadcast master
+* 09/12/2026: mirror threads restored across Reddit
+* 09/06/2026: Anthony Quinn, Queen Latifah
+* 08/27/2026: Sydney Pollack, Jack Lemmon, Jennifer Jason Leigh, and 10 more
+* 05/23/2026: Bernadette Peters, Dave Chappelle, Bryan Cranston, alternate cuts
+* 03/01/2026: Sally Field, Dennis Hopper, Neil Simon, Christopher Walken, Martin Landau, Anjelica Huston
+* 01/07/2026: Lee Grant, Tommy Lee Jones, Edward Norton, Brad Pitt
+* 12/23/2025: Julia Roberts (lost media), Kristen Wiig
+* 12/17/2025: initial release, 195 series episodes and 13 specials
 
 ## Availability checklist
 
@@ -466,7 +456,7 @@ The full history is in [docs/CHANGELOG.md](docs/CHANGELOG.md).
 ## Contributing
 
 Missing an episode, or have a better copy? See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
-Known problems that are documented rather than fixed are listed in
+Problems that are documented rather than fixed are in
 [docs/known-issues.md](docs/known-issues.md).
 
 ## Licence

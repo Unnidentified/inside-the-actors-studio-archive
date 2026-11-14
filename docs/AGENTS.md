@@ -1,7 +1,7 @@
 # Working notes for coding agents
 
-Repo-specific conventions. Read this before opening a PR or touching the
-audit tooling.
+Conventions for this repository. Read them before opening a pull request or
+touching the audit tooling.
 
 ## Writing style
 
@@ -32,10 +32,10 @@ State the thing. Give the reason. Stop.
 
 ## Attribution
 
-**Do not list the agent tooling as a contributor or participant anywhere.**
-Not as a commit author, not as a co-author trailer, not as a PR author or
-reviewer, not in changelogs or acknowledgements, not in `package.json`-style
-metadata. Commits are authored and committed by Bannatar
+Do not list the agent tooling as a contributor or participant anywhere: not
+as a commit author, not as a co-author trailer, not as a pull request author
+or reviewer, not in changelogs or acknowledgements, not in package metadata.
+Commits are authored and committed by Bannatar
 (`107312024+Unnidentified@users.noreply.github.com`).
 
 ## Pull requests
@@ -46,10 +46,10 @@ was verified.
 
 ## Contributing flow
 
-Contributors attach episode files **directly to a GitHub issue**. A maintainer
+Contributors attach episode files directly to a GitHub issue. A maintainer
 saves the file, deletes the attachment from GitHub, and closes the issue once
 it is verified and in the archive. Do not point people at a Drive staging
-folder; nothing should stay hosted on GitHub.
+folder. Nothing should stay hosted on GitHub.
 
 ## Checks before pushing
 
@@ -63,7 +63,7 @@ itas audit --strict     # cross-check Wikipedia / Drive / checklist
 itas verify-names --strict
 ```
 
-All four must pass. `itas audit` exits non-zero on any error; known issues are
+All four must pass. `itas audit` exits non-zero on any error. Known issues are
 downgraded to INFO in `itas/audit.py::KNOWN_ISSUES` so CI stays green.
 
 ## Data files are generated
@@ -80,7 +80,7 @@ itas render --write --also README.md         # regenerate both checklists
 
 ## Known issues
 
-`known-issues.md` in this folder lists problems that are understood but not fixed,
-including `S15E02` (a James Lipton special filed under the Dave Chappelle slot)
-and the 33 files that predate the filename convention. Read it before
-"fixing" either.
+`known-issues.md` in this folder lists problems that are understood but not
+fixed, including `S15E02` (a James Lipton special filed under the Dave
+Chappelle slot) and the 33 files that predate the filename convention. Read it
+before "fixing" either.
